@@ -1,2 +1,32 @@
 public/
 .idea/
+
+
+
+# since I am not updating the project yet, let's not add them to repo
+content/project/
+
+# I don't have any post yet, so let's not add them to repo
+content/post/*
+content/blog/*
+content/teaching
+
+
+ehsan_notes.txt
+
+.history/*
+.hugo_build.lock
+
+*/*.md_
+content/authors/*.md_
+content/authors/admin/*.md_
+content/authors/admin/_index.md_
+content/authors/admin/index.md_
+
+
+resources/_gen/*
+content/authors/admin/_index.md_
+
+.DS_Store
+/resources/_gen/
+hugo_stats.json

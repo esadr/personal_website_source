@@ -1,7 +1,8 @@
-[submodule "themes/academic"]
-	path = themes/academic
-	url = https://github.com/gcushen/hugo-academic.git
 [submodule "public"]
 	path = public
 	url = git@github.com:esadr/esadr.github.io.git
 	branch = master
+
+[submodule "themes/academic"]
+	path = themes/academic
+	url = https://github.com/wowchemy/starter-hugo-academic.git

@@ -1,0 +1,74 @@
+# Configuration of Hugo
+
+# Website name
+title: Ehsan SadrFaridpour - Machine Learning and AI Research
+# Website URL
+baseURL: 'https://ehsan.faridpour.com/'
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## ADVANCED
+############################
+
+build:
+  writeStats: true
+enableGitInfo: false
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  authors: '/author/:slug/'
+disableAliases: true
+outputs:
+  home: [HTML, RSS]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: "Lanczos"
+  quality: 80
+  anchor: "Smart"
+timeout: "600000"
+taxonomies:
+  author: authors
+  tag: tags
+  publication_type: publication_types
+markup:
+  highlight:
+    lineNos: false
+
+security:
+  enableInlineScript: false
+  enableUnsafeMarkup: false
+
+sitemap:
+  changefreq: 'weekly'
+  priority: 0.5
+
+############################
+## CUSTOMIZATION
+############################
+
+appearance:
+  mode: system
+  color: blue
+
+header:
+  logo:
+    text: "Ehsan SadrFaridpour"
+    show_name_below_picture: false # Comment out the repeated display of the name
+
+about:
+  bio: |
+    Hello, I am Ehsan Sadrfaridpour, a Senior Data Scientist at ModernaTX since February 2023. I have a Ph.D. in Biomedical Data Science and Informatics, and my research interests include developing scalable machine learning algorithms for applications in text mining and healthcare. Previously, I worked under the supervision of Professor Ilya Safro in the Algorithms and Computational Science Lab at Clemson University.
+  show_name: false # Additional configuration to ensure name is not displayed twice.
