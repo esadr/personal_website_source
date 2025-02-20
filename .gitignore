@@ -30,3 +30,5 @@ content/authors/admin/_index.md_
 .DS_Store
 /resources/_gen/
 hugo_stats.json
+
+_vendor/*
