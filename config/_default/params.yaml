@@ -59,21 +59,38 @@ features:
   privacy_pack:
     enable: false
 
-
 comments:
   provider: giscus
   giscus:
-    repo: "esadr/esadr.github.io"  # ✅ Replace with your actual GitHub repo
-    repo_id: "61353154"  # ✅ Get this from the Giscus setup page (in the URL of the page)
-    category: "Blog Comments"  # ✅ Use the exact category name from your GitHub Discussions
-    category_id: "q-a"  # ✅ Find this in the Giscus setup
-    mapping: "pathname"  # ✅ Maps blog posts to discussions based on their URL
-    # theme: "preferred_color_scheme"  # ✅ Uses the user's preferred light/dark mode
-    reactions_enabled: "1"  # ✅ Enables reaction emojis (👍, 🚀, ❤️)
-    emit_metadata: "0"  # ✅ Set to "1" if you want additional metadata for SEO
-    input_position: "bottom"  # ✅ Places the comment box at the bottom of the discussion
+    repo: "esadr/esadr.github.io"
+    repo_id: "MDEwOlJlcG9zaXRvcnkxMDQxMzM4NjU="
+    category: "Q&A"
+    category_id: "DIC_kwDOBjT06c4CnIHT"
+    mapping: "pathname"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    crossorigin: "anonymous"
 
 markup:
   goldmark:
     renderer:
       unsafe: true
+
+# Social network links
+profiles:
+  - icon: at-symbol
+    url: 'mailto:esadrfa@gmail.com'
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/esadr
+  - icon: brands/linkedin
+    url: https://linkedin.com/in/esadr/
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?hl=en&user=wL5u0WwAAAAJ
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0002-1359-7964
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Ehsan_Sadrfaridpour

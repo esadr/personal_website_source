@@ -1,0 +1,14 @@
+comments:
+  provider: giscus
+  giscus:
+    repo: "esadr/personal_website_source"
+    repo_id: "MDEwOlJlcG9zaXRvcnkxODc5MTE5MTg="
+    category: "Q&A"
+    category_id: "DIC_kwDOCzNO7s4CnVMH"
+    mapping: "pathname"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "en"
+    crossorigin: "anonymous"

@@ -1,0 +1,22 @@
+{{ if and .Params.comments (eq .Params.comments true) }}
+  <div class="comments-notice">
+    <p>💬 Comments are powered by GitHub Discussions. Be the first to start the conversation!</p>
+    <p>Environment: {{ .Site.Params.environment }}</p> <!-- Debug message -->
+  </div>
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ site.Params.comments.giscus.repo }}"
+          data-repo-id="{{ site.Params.comments.giscus.repo_id }}"
+          data-category="{{ site.Params.comments.giscus.category }}"
+          data-category-id="{{ site.Params.comments.giscus.category_id }}"
+          data-mapping="{{ site.Params.comments.giscus.mapping }}"
+          data-strict="0"
+          data-reactions-enabled="{{ site.Params.comments.giscus.reactions_enabled }}"
+          data-emit-metadata="{{ site.Params.comments.giscus.emit_metadata }}"
+          data-input-position="{{ site.Params.comments.giscus.input_position }}"
+          data-theme="{{ site.Params.comments.giscus.theme }}"
+          data-lang="{{ site.Params.comments.giscus.lang }}"
+          crossorigin="{{ site.Params.comments.giscus.crossorigin }}"
+          async>
+  </script>
+  <div class="giscus"></div>
+{{ end }}
