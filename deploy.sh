@@ -4,8 +4,8 @@
 # It preserves the CNAME file and ensures other files are updated interactively.
 
 # Define directories
-SOURCE_DIR="/Users/esadrfaridpour/dev/PPP/personal_website_source/public"
-TARGET_DIR="/Users/esadrfaridpour/dev/PPP/esadr.github.io"
+SOURCE_DIR="./public"
+TARGET_DIR="../esadr.github.io"
 
 # Navigate to the target directory
 if [ -d "$TARGET_DIR/.git" ]; then
@@ -16,10 +16,8 @@ else
 fi
 
 # print current directory path
-echo "workig in target directory which is:" 
+echo "working in target directory which is:" 
 pwd
-
-
 
 echo "Deploying Hugo website"
 echo "from: $SOURCE_DIR"
@@ -30,7 +28,6 @@ if [ -f CNAME ]; then
   echo "Preserving CNAME file..."
   cp CNAME /tmp/CNAME_backup
 fi
-
 
 # Remove all files in the target directory except .git and CNAME
 find . -mindepth 1 -not -name '.git' -not -name 'CNAME' -exec rm -rf {} +
