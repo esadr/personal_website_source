@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main>
+  <article>
+    <h1>{{ .Title }}</h1>
+    <p><strong>{{ .Date.Format "January 2, 2006" }}</strong></p>
+    {{ .Content }}
+  </section>
+  </article>
+  <!-- Insert Giscus partial AFTER your post content -->
+  {{ partial "giscus-comments.html" . }}
+  
+
+</main>
+{{ end }}
+

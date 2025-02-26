@@ -1,0 +1,15 @@
+{{ define "blox" -}}
+<section class="my-8">
+  <h2>{{ .content.title | default "Blog" }}</h2>
+  <p>{{ .content.subtitle }}</p>
+  <ul>
+    {{ $posts := where .Site.RegularPages "Type" "post" }}
+    {{ range $posts }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <small>({{ .Date.Format "Jan 2, 2006" }})</small>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+{{- end }}

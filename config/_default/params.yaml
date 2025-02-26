@@ -64,11 +64,11 @@ comments:
   provider: giscus
   giscus:
     repo: "esadr/esadr.github.io"  # ✅ Replace with your actual GitHub repo
-    repo_id: "61353154"  # ✅ Get this from the Giscus setup page (in the URL of the page)
-    category: "Blog Comments"  # ✅ Use the exact category name from your GitHub Discussions
-    category_id: "q-a"  # ✅ Find this in the Giscus setup
+    repo_id: "MDEwOlJlcG9zaXRvcnkxMDQxMzM4NjU="  # ✅ Get this from the Giscus setup page (in the URL of the page)
+    category: "q-a"  # ✅ Use the exact category name from your GitHub Discussions
+    category_id: "DIC_kwDOBjT06c4CnIHT"  # ✅ Find this in the Giscus setup
     mapping: "pathname"  # ✅ Maps blog posts to discussions based on their URL
-    # theme: "preferred_color_scheme"  # ✅ Uses the user's preferred light/dark mode
+    theme: "preferred_color_scheme"  # ✅ Uses the user's preferred light/dark mode
     reactions_enabled: "1"  # ✅ Enables reaction emojis (👍, 🚀, ❤️)
     emit_metadata: "0"  # ✅ Set to "1" if you want additional metadata for SEO
     input_position: "bottom"  # ✅ Places the comment box at the bottom of the discussion
@@ -77,3 +77,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+comments: true
+giscusTheme: preferred_color_scheme
+disableComments: false
