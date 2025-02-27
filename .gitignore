@@ -7,7 +7,6 @@ public/
 content/project/
 
 # I don't have any post yet, so let's not add them to repo
-content/post/*
 content/blog/*
 content/teaching
 
