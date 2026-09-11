@@ -34,14 +34,19 @@ profiles:
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/esadr
+    label: GitHub
   - icon: brands/linkedin
     url: https://linkedin.com/in/esadr/
+    label: LinkedIn
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?hl=en&user=wL5u0WwAAAAJ
+    label: Google Scholar
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-1359-7964
+    label: ORCID
   - icon: academicons/researchgate
     url: https://www.researchgate.net/profile/Ehsan_Sadrfaridpour
+    label: ResearchGate
 
 interests:
   - Scalable Machine Learning
@@ -185,4 +190,3 @@ My experience includes:
 - **Senior Data Scientist at ModernaTX**: Currently, I develop tools and products on the Data Science Platform team to empower cross-organizational collaboration. I focus on predictive services and chatbots for Supply Chain, Legal, and Human Resources, and automate data connections to generate business insights.
 
 I'm deeply interested in advancements in Large Language Models (LLMs) and predictive services. My goal is to enable others by building and deploying cloud-based tools that reduce process friction and enhance collaboration among data scientists.
-

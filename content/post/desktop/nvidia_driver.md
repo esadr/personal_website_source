@@ -2,7 +2,7 @@
 title: "How to Install RTX 5070 on Ubuntu 24.04 with KDE Plasma (X11)"
 date: 2025-03-30
 authors: 
-    - Ehsan
+    - admin
 tags: 
 - Driver
 - Desktop

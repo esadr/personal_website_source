@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-hugo --i18n-warnings server
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$SCRIPT_DIR/scripts/hugo.sh" --i18n-warnings server

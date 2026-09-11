@@ -46,6 +46,9 @@ taxonomies:
 markup:
   highlight:
     lineNos: false
+  goldmark:
+    renderer:
+      unsafe: true
 
 security:
   enableInlineScript: false

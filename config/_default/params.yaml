@@ -17,7 +17,7 @@ marketing:
     description: 'Ehsan SadrFaridpour - Biomedical Data Science Researcher with expertise in scalable machine learning, AI, and predictive analytics.'
     twitter: 'SadrEhson'
   analytics:
-    google_analytics: 'UA-12345678-1'
+    google_analytics: ''
     baidu_tongji: ''
     plausible: ''
     fathom: ''
@@ -74,11 +74,6 @@ comments:
     lang: "en"
     crossorigin: "anonymous"
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
 # Social network links
 profiles:
   - icon: at-symbol
@@ -86,11 +81,16 @@ profiles:
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/esadr
+    label: GitHub
   - icon: brands/linkedin
     url: https://linkedin.com/in/esadr/
+    label: LinkedIn
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?hl=en&user=wL5u0WwAAAAJ
+    label: Google Scholar
   - icon: academicons/orcid
     url: https://orcid.org/0000-0002-1359-7964
+    label: ORCID
   - icon: academicons/researchgate
     url: https://www.researchgate.net/profile/Ehsan_Sadrfaridpour
+    label: ResearchGate

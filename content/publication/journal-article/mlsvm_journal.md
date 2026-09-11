@@ -2,7 +2,7 @@
 title: "Engineering Fast Multilevel Support Vector Machines"
 
 authors:
-  - Ehsan Sadrfaridpour
+  - admin
   - Talayeh Razzaghi
   - Ilya Safro
 
@@ -64,4 +64,3 @@ Check out the project repository for the source code and further information.
 {{% /callout %}}
 
 The computational complexity of solving nonlinear support vector machine (SVM) is prohibitive on large-scale data. In particular, this issue becomes very sensitive when the data represents additional difficulties such as highly imbalanced class sizes. Typically, nonlinear kernels produce significantly higher classification quality compared to linear kernels but introduce extra kernel and model parameters, which makes fitting computationally expensive. We introduce a generalized fast multilevel framework for regular and weighted SVM and discuss several versions of its algorithmic components that lead to a good trade-off between quality and time. Our framework is implemented using PETSc, which allows an easy integration with scientific computing tasks. The experimental results demonstrate significant speedup compared to the state-of-the-art nonlinear SVM libraries.
-

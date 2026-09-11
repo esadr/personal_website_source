@@ -109,7 +109,7 @@ sections:
         If you are working on advanced ML, AI, or healthcare predictive analytics projects, let's connect! I'm especially interested in applying machine learning to improve health outcomes, exploring large language models, and advancing predictive services.
       button:
         text: Get in Touch
-        url: contact/
+        url: mailto:esadrfa@gmail.com
     design:
       card:
         # Card background color (CSS class)
@@ -126,4 +126,3 @@ sections:
       view: article-grid
       columns: 1
 ---
-

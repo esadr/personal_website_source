@@ -6,7 +6,7 @@ authors:
   - Talayeh Razzaghi
   - Ilya Safro
   - Joseph Ewing
-  - Ehsan Sadrfaridpour
+  - admin
   - John D. Scott
 
 # Author notes (optional)

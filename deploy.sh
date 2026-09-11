@@ -1,81 +1,74 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# This script builds the Hugo website and deploys it to the GitHub repository (esadr.github.io).
-# It preserves the CNAME file and ensures other files are updated interactively.
+# Build the Hugo source and update the adjacent GitHub Pages repository.
+# Usage: ./deploy.sh [commit message] [--push]
 
-# Get the absolute path of the current directory
-CURRENT_DIR="$(pwd)"
-SOURCE_DIR="$CURRENT_DIR/public"
-TARGET_DIR="$(dirname "$CURRENT_DIR")/esadr.github.io"
+set -euo pipefail
 
-echo "Source directory: $SOURCE_DIR"
-echo "Target directory: $TARGET_DIR"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TARGET_DIR="$(dirname "$SCRIPT_DIR")/esadr.github.io"
+COMMIT_MESSAGE="${1:-}"
+PUSH_MODE="${2:-}"
 
-# Build the Hugo site
-echo "Building Hugo site..."
-hugo --minify
-
-# Check if Hugo build was successful
-if [ $? -ne 0 ]; then
-    echo "Error: Hugo build failed"
-    exit 1
+if [[ ! -d "$TARGET_DIR/.git" ]]; then
+  echo "Expected the deployment repository at $TARGET_DIR." >&2
+  exit 1
 fi
 
-# Verify target directory exists and is a git repository
-if [ ! -d "$TARGET_DIR" ]; then
-    echo "Error: Target directory $TARGET_DIR does not exist"
-    exit 1
+TARGET_ORIGIN="$(git -C "$TARGET_DIR" remote get-url origin)"
+if [[ "$TARGET_ORIGIN" != *"esadr/esadr.github.io.git" ]]; then
+  echo "Refusing to deploy to unexpected remote: $TARGET_ORIGIN" >&2
+  exit 1
 fi
 
-if [ ! -d "$TARGET_DIR/.git" ]; then
-    echo "Error: $TARGET_DIR is not a Git repository. Please initialize it with 'git init'."
-    exit 1
+if [[ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]]; then
+  echo "The deployment repository has uncommitted changes. Commit or stash them first." >&2
+  exit 1
 fi
 
-cd "$TARGET_DIR"
+BUILD_DIR="$(mktemp -d "${TMPDIR:-/tmp}/personal-website-build.XXXXXX")"
+cleanup() {
+  rm -rf "$BUILD_DIR"
+}
+trap cleanup EXIT
 
-# print current directory path
-echo "working in target directory which is:" 
-pwd
+echo "Building the site into a temporary directory..."
+"$SCRIPT_DIR/scripts/hugo.sh" --minify --destination "$BUILD_DIR"
 
-echo "Deploying Hugo website"
-echo "from: $SOURCE_DIR"
-echo "to: $TARGET_DIR"
-
-# Ensure the CNAME file is preserved
-if [ -f CNAME ]; then
-    echo "Preserving CNAME file..."
-    cp CNAME /tmp/CNAME_backup
+if [[ ! -f "$BUILD_DIR/index.html" ]]; then
+  echo "Build did not produce index.html; deployment aborted." >&2
+  exit 1
 fi
 
-# Remove all files in the target directory except .git directory and CNAME
-shopt -s extglob
-rm -rf !(CNAME|.git)
-
-# Copy new files from the source directory
-cp -r "$SOURCE_DIR/"* .
-
-# Restore the CNAME file if it exists
-if [ -f /tmp/CNAME_backup ]; then
-    echo "Restoring CNAME file..."
-    mv /tmp/CNAME_backup CNAME
+if [[ ! -f "$TARGET_DIR/CNAME" ]]; then
+  echo "The deployment repository is missing its CNAME file; deployment aborted." >&2
+  exit 1
 fi
 
-# Add changes to Git
-git add -A
+echo "Synchronizing generated files to $TARGET_DIR..."
+rsync --archive --delete --exclude='.git/' --exclude='CNAME' "$BUILD_DIR/" "$TARGET_DIR/"
 
-git status 
+git -C "$TARGET_DIR" add --all
+git -C "$TARGET_DIR" status --short
 
-# Commit changes
-read -p "Enter commit message: " commit_message
-git commit -m "$commit_message"
+if git -C "$TARGET_DIR" diff --cached --quiet; then
+  echo "No generated changes to commit."
+  exit 0
+fi
 
-# Push to GitHub
-read -p "Do you want to push the changes to GitHub? (y/n): " push_confirm
-if [[ "$push_confirm" == "y" || "$push_confirm" == "Y" ]]; then
-  git push origin master
+if [[ -z "$COMMIT_MESSAGE" ]]; then
+  read -r -p "Deployment commit message: " COMMIT_MESSAGE
+fi
+
+git -C "$TARGET_DIR" commit -m "$COMMIT_MESSAGE"
+
+if [[ "$PUSH_MODE" == "--push" ]]; then
+  git -C "$TARGET_DIR" push origin master
 else
-  echo "Push aborted."
+  read -r -p "Push the deployment commit to GitHub? (y/n): " PUSH_CONFIRM
+  if [[ "$PUSH_CONFIRM" == "y" || "$PUSH_CONFIRM" == "Y" ]]; then
+    git -C "$TARGET_DIR" push origin master
+  else
+    echo "Deployment commit created locally; push skipped."
+  fi
 fi
-
-echo "Deployment complete."
