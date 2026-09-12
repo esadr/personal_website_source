@@ -109,6 +109,7 @@
       </a>
     {{ end }}
 
+    {{ if $block.content.show_details }}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-between mt-6 dark:text-gray-300">
       {{ with $person.interests }}
         <div>
@@ -138,5 +139,6 @@
         </div>
       {{ end }}
     </div>
+    {{ end }}
   </div>
 </div>

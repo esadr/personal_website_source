@@ -20,11 +20,11 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Biomedical Data Science Researcher
+role: Senior Data Scientist | Enterprise GenAI & Production ML Systems
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: ModernaTX
+  - name: Moderna
     url: "https://www.modernatx.com/"
 
 # Social network links
@@ -49,10 +49,10 @@ profiles:
     label: ResearchGate
 
 interests:
-  - Scalable Machine Learning
-  - Large Language Models
-  - Graph Mining
-  - Bioinformatics
+  - Enterprise GenAI
+  - RAG and Retrieval
+  - LLM Evaluation
+  - Production ML and MLOps
 
 education:
   - area: PhD Biomedical Data Science and Informatics
@@ -81,27 +81,21 @@ work:
     date_start: 2023-02-01
     date_end: ''
     summary: |2-
-      Responsibilities include:
-      - Developing and deploying cloud-based tools and products to empower cross-organizational collaboration and reduce process friction for data scientists.
-      - Building predictive services, chatbots, and automations for departments such as Supply Chain, Legal, and Human Resources, connecting various data sources to generate actionable business insights.
-      - Facilitating the adoption of advanced machine learning techniques, including Large Language Models (LLMs), to enhance predictive analytics.
+      Lead architecture and productionization of enterprise AI systems spanning GenAI/RAG, retrieval and evaluation, governed enterprise knowledge, cloud ML services, observability, and production reliability. I also own modernization and reliability work for production forecasting workflows and reusable ML operating patterns.
   - position: Senior Data Scientist
     company_name: Infor
     company_url: https://www.infor.com/
     date_start: 2021-05-01
     date_end: 2023-01-31
     summary: |2-
-      - Led data science innovation showcases to drive actionable insights for Infor’s customers.
-      - Developed, experimented with, and evaluated machine learning algorithms to determine optimal approaches for diverse projects.
-      - Deployed and maintained end-to-end machine learning products on cloud platforms (AWS) using MLOps practices.
+      Developed and productionized end-to-end machine learning solutions in AWS and helped turn applied ML concepts into deployable capabilities using repeatable MLOps practices.
   - position: Data Scientist
     company_name: Lowe's Home Improvement
     company_url: https://www.lowes.com/
     date_start: 2020-06-01
     date_end: 2021-04-30
     summary: |2-
-      - Built and deployed machine learning applications on cloud platforms to provide actionable business insights.
-      - Conducted in-depth statistical analysis and demand forecasting to increase sales and enhance customer satisfaction.
+      Built cloud-based machine learning applications and applied statistical modeling and demand forecasting to operational business problems.
   - position: Graduate Research Assistant
     company_name: Clemson University
     company_url: https://www.clemson.edu/
@@ -179,14 +173,14 @@ work:
 #       Awarded for presenting novel research on scalable machine learning techniques for healthcare text mining.
 ---
 
-## About Me
+I build reliable production AI systems that connect machine learning and large language models with enterprise knowledge and real-world workflows.
 
-Hello, I'm a Senior Data Scientist at ModernaTX since 2023. I have a passion for both research and practical implementation, specializing in scalable machine learning solutions that deliver impactful results across industries.
+**RAG · LLM Evaluation · Retrieval · MLOps · Cloud AI · Observability**
 
-My experience includes:
+## About
 
-- **Data Scientist at Lowe's Home Improvement**: Enhanced customer experience and optimized operations through data-driven solutions.
-- **Senior Data Scientist at Infor**: Built predictive models and analytics tools to support enterprise decision-making.
-- **Senior Data Scientist at ModernaTX**: Currently, I develop tools and products on the Data Science Platform team to empower cross-organizational collaboration. I focus on predictive services and chatbots for Supply Chain, Legal, and Human Resources, and automate data connections to generate business insights.
+I’m a Senior Data Scientist at Moderna working on production AI and enterprise GenAI systems. My work spans RAG and retrieval architectures, LLM evaluation, knowledge governance, cloud-based ML services, production reliability, and forecasting platforms.
 
-I'm deeply interested in advancements in Large Language Models (LLMs) and predictive services. My goal is to enable others by building and deploying cloud-based tools that reduce process friction and enhance collaboration among data scientists.
+My background combines software and infrastructure engineering, machine learning research, and end-to-end production ML. I’m particularly interested in building reliable AI systems that connect models with enterprise knowledge and real-world workflows, with a focus on grounded retrieval, evaluation, observability, and scalable system design.
+
+I hold a PhD in Biomedical Data Science and Informatics and an MS in Computer Science from Clemson University.

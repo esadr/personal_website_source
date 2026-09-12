@@ -1,7 +1,7 @@
 # Configuration of Hugo
 
 # Website name
-title: Ehsan SadrFaridpour - Machine Learning and AI Research
+title: 'Ehsan SadrFaridpour | Enterprise GenAI, RAG & Production ML Systems'
 # Website URL
 baseURL: 'https://ehsan.faridpour.com/'
 
@@ -73,5 +73,5 @@ header:
 
 about:
   bio: |
-    Hello, I am Ehsan Sadrfaridpour, a Senior Data Scientist at ModernaTX since February 2023. I have a Ph.D. in Biomedical Data Science and Informatics, and my research interests include developing scalable machine learning algorithms for applications in text mining and healthcare. Previously, I worked under the supervision of Professor Ilya Safro in the Algorithms and Computational Science Lab at Clemson University.
+    Senior Data Scientist at Moderna building reliable production AI systems across enterprise GenAI, retrieval and evaluation, cloud ML, observability, and forecasting.
   show_name: false # Additional configuration to ensure name is not displayed twice.

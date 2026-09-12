@@ -1,45 +1,67 @@
 ---
-# Leave the homepage title empty to use the site title
 title: ""
-date: 2023-10-10
+date: 2026-09-11
 type: landing
 
 design:
-  # Default section spacing
   spacing: "6rem"
 
 sections:
   - block: resume-biography-3
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      # Show a call-to-action button under your biography? (optional)
-      # button:
-      #   text: Download CV
-      #   url: uploads/resume.pdf
     design:
       css_class: dark
       background:
         color: black
         image:
-          # Add your image background to `assets/media/`.
           filename: stacked-peaks.svg
           filters:
             brightness: 1.0
           size: cover
           position: center
           parallax: false
-  - block: markdown
-    content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: |-
-        I am a data science researcher passionate about leveraging machine learning and artificial intelligence to create impactful solutions. My work focuses on automation, system integration, and generating insights that support strategic decisions.
 
-        I am always open to new opportunities and collaborations in advanced AI and ML projects. Feel free to reach out if you're interested.
+  - block: features
+    id: focus
+    content:
+      title: What I Build
+      text: Reliable AI systems designed for enterprise knowledge and real-world operations.
+      items:
+        - name: Enterprise GenAI & Knowledge Systems
+          icon: circle-stack
+          description: Architect and productionize enterprise RAG systems with governed retrieval, source citations, metadata-aware search, document lifecycle controls, observability, and production reliability.
+        - name: AI Evaluation & Retrieval Quality
+          icon: check-badge
+          description: Design evaluation systems that separate retrieval quality from answer-generation quality using gold and SME-reviewed datasets, retrieval metrics, citation coverage, evidence sufficiency, unsupported-answer behavior, and latency.
+        - name: Production ML & Forecasting Platforms
+          icon: chart-bar
+          description: Own and modernize production ML workflows with traceability, observability, AWS-managed execution, CI/CD, and repeatable operating practices that reduce manual operational work.
+
+  - block: features
+    id: experience
+    content:
+      title: Experience
+      text: Selected recent roles; additional experience and education are available on the [Experience page](/experience/).
+      items:
+        - name: Moderna — Senior Data Scientist
+          description: '**2023–Present** — Lead architecture and productionization of enterprise AI systems spanning GenAI/RAG, retrieval and evaluation, governed enterprise knowledge, cloud ML services, observability, and production reliability. I also own modernization and reliability work for production forecasting workflows and reusable ML operating patterns.'
+        - name: Infor — Senior Data Scientist
+          description: '**2021–2023** — Developed and productionized end-to-end machine learning solutions in AWS and helped turn applied ML concepts into deployable capabilities using repeatable MLOps practices.'
+        - name: Lowe’s — Data Scientist
+          description: '**2020–2021** — Built cloud-based machine learning applications and applied statistical modeling and demand forecasting to operational business problems.'
+
+  - block: markdown
+    id: research
+    content:
+      title: Research Background & Publications
+      subtitle: ""
+      text: |-
+        My research background is in scalable machine learning, NLP, large and imbalanced datasets, and biomedical data science. This work provides the algorithmic foundation for my current focus on reliable production AI systems.
     design:
-      columns: '1'
+      columns: "1"
+
   - block: collection
     id: papers
     content:
@@ -51,6 +73,7 @@ sections:
     design:
       view: article-grid
       columns: 2
+
   - block: collection
     content:
       title: Recent Publications
@@ -61,68 +84,42 @@ sections:
         exclude_featured: false
     design:
       view: citation
+
   - block: collection
     id: talks
     content:
-      title: Recent & Upcoming Talks
+      title: Talks
       filters:
         folders:
           - event
     design:
       view: article-grid
       columns: 1
-  
-  # - block: collection
-  #   id: news
-  #   content:
-  #     title: Recent News
-  #     subtitle: ''
-  #     text: ''
-  #     # Page type to display. E.g. post, talk, publication...
-  #     page_type: post
-  #     # Choose how many pages you would like to display (0 = all pages)
-  #     count: 5
-  #     # Filter on criteria
-  #     filters:
-  #       author: ""
-  #       category: ""
-  #       tag: ""
-  #       exclude_featured: false
-  #       exclude_future: false
-  #       exclude_past: false
-  #       publication_type: ""
-  #     # Choose how many pages you would like to offset by
-  #     offset: 0
-  #     # Page order: descending (desc) or ascending (asc) date.
-  #     order: desc
-  #   design:
-  #     # Choose a layout view
-  #     view: date-title-summary
-  #     # Reduce spacing
-  #     spacing:
-  #       padding: [0, 0, 0, 0]
-  - block: cta-card
-    demo: false
+
+  - block: collection
+    id: writing
     content:
-      title: 👉 Interested in Collaborating?
-      text: |-
-        If you are working on advanced ML, AI, or healthcare predictive analytics projects, let's connect! I'm especially interested in applying machine learning to improve health outcomes, exploring large language models, and advancing predictive services.
+      title: Writing
+      filters:
+        folders:
+          - post
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        order: desc
+    design:
+      view: article-grid
+      columns: 2
+
+  - block: cta-card
+    content:
+      title: Let’s Connect
+      text: I enjoy exchanging ideas on reliable GenAI, retrieval and evaluation, production ML, and scalable AI systems.
       button:
-        text: Get in Touch
+        text: Email Me
         url: mailto:esadrfa@gmail.com
     design:
       card:
-        # Card background color (CSS class)
         css_class: "bg-primary-700"
         css_style: ""
-  - block: collection
-    id: blog
-    content:
-      title: Learning and Sharing
-      filters:
-        folders:
-          - blog
-    design:
-      view: article-grid
-      columns: 1
 ---
